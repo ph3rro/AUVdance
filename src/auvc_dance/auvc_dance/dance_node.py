@@ -10,7 +10,7 @@ class DanceNode(Node):
         super().__init__("dance_node")    # names the node when running
 
         # Setting up the publishing topic
-        self.dance_moves = self.create_publisher(Twist, "dance_moves", 10)
+        self.dance_moves = self.create_publisher(Twist, "/mavros/setpoint_velocity/cmd_vel", 10)
 
         #DANCE 
         self.timer = self.create_timer(1.0, self.move_callback(Claps.clap_once()))
