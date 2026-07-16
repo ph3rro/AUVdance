@@ -6,6 +6,8 @@
   <description>TODO: Package description</description>
   <maintainer email="arceascompany@gmail.com">name</maintainer>
   <license>TODO: License declaration</license>
+  <depend>rclpy</depend>
+
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
