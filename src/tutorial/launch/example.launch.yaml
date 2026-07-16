@@ -1,0 +1,13 @@
+launch:
+
+- node:
+    pkg: "tutorial"
+    exec: "publisher"
+    name: "tutorial_publisher"
+    namespace: ""
+
+- node:
+    pkg: "tutorial"
+    exec: "subscriber"
+    name: "tutorial_subscriber"
+    namespace: ""
