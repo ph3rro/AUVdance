@@ -3,18 +3,18 @@ from geometry_msgs.msg import Twist
 import rclpy    # the ROS 2 client library for Python
 from rclpy.node import Node    # the ROS 2 Node class
 import numpy as np
-from claps import Claps
+from hops_arrays import Hops
 
 class DanceNode(Node):
     def __init__(self):
         super().__init__("dance_node")    # names the node when running
 
         # Setting up the publishing topic
-        self.dance_moves = self.create_publisher(Twist, "/mavros/setpoint_velocity/cmd_vel", 10)
+        self.dance_moves = self.create_publisher(Twist, '/mavros/setpoint_velocity/cmd_vel', 10)
 
         #DANCE 
-        self.timer = self.create_timer(1.0, self.move_callback(Claps.clap_once()))
-        self.timer = self.create_timer(1.0, self.move_callback(Claps.stop()))
+        self.timer = self.create_timer(1.0, self.move_callback(Hops.hop_once()))
+        self.timer = self.create_timer(1.0, self.move_callback(Hops.stop()))
 
 
 
