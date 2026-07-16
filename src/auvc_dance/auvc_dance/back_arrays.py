@@ -1,7 +1,4 @@
 import time
-from geometry_msgs.msg import Twist
-import rclpy    # the ROS 2 client library for Python
-from rclpy.node import Node    # the ROS 2 Node class
 import numpy as np
 
 class back_arrays:

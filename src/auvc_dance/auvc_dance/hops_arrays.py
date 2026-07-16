@@ -1,5 +1,4 @@
 import time
-import rclpy    # the ROS 2 client library for Python
 import numpy as np
 
 class Hops:
