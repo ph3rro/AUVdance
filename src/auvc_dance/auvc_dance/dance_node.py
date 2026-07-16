@@ -14,6 +14,7 @@ class DanceNode(Node):
 
         #DANCE 
         self.timer = self.create_timer(1.0, self.move_callback(Claps.clap_once()))
+        self.timer = self.create_timer(1.0, self.move_callback(Claps.stop()))
 
 
 
