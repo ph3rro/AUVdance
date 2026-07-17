@@ -21,33 +21,33 @@ class DanceNode(Node):
         neutral = 500.0
         self.dance_routine = [
             [1.75, 0, 0, neutral, 0],
-            hop(0.5, 500.0), # duration, strength/500
+            hop(0.5, 200.0), # duration, strength/500
             [1.5, 0, 0, neutral, 0],
-            right(0.5, 500.0),
+            right(0.5, 200.0),
             [1.5, 0, 0, neutral, 0],
-            left(0.5, 500.0),
-            hop(3.5, 0.0, 500.0),
-            [2.0, 0, 0, neutral, 0],
-            right(0.5, 500.0),
-            [1.5, 0, 0, neutral, 0],
-            left(0.5, 500.0),
-            [1.5, 0, 0, neutral, 0],
-            back(0.5, 500.0),
-            [1.5, 0, 0, neutral, 0],
-            hop(0.5, 500.0),
-            [1.5, 0, 0, neutral, 0],
-            hop(0.5, 500.0),
-            [1.5, 0, 0, neutral, 0],
-            diagonal_right(1.0, 200.0, 500.0),
-            [1.0, 0, 0, neutral, 0],
-            diagonal_left(1.0, 200.0, 500.0),
-            [1.0, 0, 0, neutral, 0],
-            left(0.5, 500),
-            [1.0, 0, 0, neutral, 0],
-            right(0.5, 500.0),
-            [1.5, 0, 0, neutral, 0],
-            diagonal_right(3.0, 200.0, 600.0), #change to diagonal_left for other auv
-            # CIRCLE
+            left(0.5, 200.0),
+            # hop(3.5, 0.0, 500.0),
+            # [2.0, 0, 0, neutral, 0],
+            # right(0.5, 500.0),
+            # [1.5, 0, 0, neutral, 0],
+            # left(0.5, 500.0),
+            # [1.5, 0, 0, neutral, 0],
+            # back(0.5, 500.0),
+            # [1.5, 0, 0, neutral, 0],
+            # hop(0.5, 500.0),
+            # [1.5, 0, 0, neutral, 0],
+            # hop(0.5, 500.0),
+            # [1.5, 0, 0, neutral, 0],
+            # diagonal_right(1.0, 200.0, 500.0),
+            # [1.0, 0, 0, neutral, 0],
+            # diagonal_left(1.0, 200.0, 500.0),
+            # [1.0, 0, 0, neutral, 0],
+            # left(0.5, 500),
+            # [1.0, 0, 0, neutral, 0],
+            # right(0.5, 500.0),
+            # [1.5, 0, 0, neutral, 0],
+            # diagonal_right(3.0, 200.0, 600.0), #change to diagonal_left for other auv
+            # # CIRCLE
         ]
         
         
