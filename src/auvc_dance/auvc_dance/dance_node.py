@@ -18,7 +18,7 @@ class DanceNode(Node):
         '''self.dance_routine is an array of arrays that dictates the dance routine'''
         # heave is from 0 to 1000, where 500 is neutral, 0 is down, and 1000 is up
         # surge is forward backward, sway is left to right, heave is up and down, yaw is turn
-        neutral = 500.0
+        neutral = 50.0
         self.dance_routine = [
             [1.75, 0, 0, neutral, 0],
             hop(0.5, 200.0), # duration, strength/500
