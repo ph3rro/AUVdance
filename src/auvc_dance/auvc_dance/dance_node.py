@@ -3,10 +3,10 @@ from rclpy.node import Node
 from mavros_msgs.msg import ManualControl
 import time
 import numpy as np
-from hops_arrays import Hops
-from left_arrays import Left
-from right_arrays import Right
-from back_arrays import Back
+from auvc_dance.hops_arrays import *
+from auvc_dance.left_arrays import *
+from auvc_dance.right_arrays import *
+from auvc_dance.back_arrays import *
 
 class DanceNode(Node):
     def __init__(self):
@@ -21,34 +21,35 @@ class DanceNode(Node):
         neutral = 500.0
         self.dance_routine = [
             [1.75, 0, 0, neutral, 0],
-            Hops.hop(0.5, 500.0), # duration, strength/500
+            hop(0.5, 500.0), # duration, strength/500
             [1.5, 0, 0, neutral, 0],
-            Right.right(0.5, 500.0),
+            right(0.5, 500.0),
             [1.5, 0, 0, neutral, 0],
-            Left.left(0.5, 500.0),
-            Hops.hop(3.5, 0.0, 500.0),
+            left(0.5, 500.0),
+            hop(3.5, 0.0, 500.0),
             [2.0, 0, 0, neutral, 0],
-            Right.right(0.5, 500.0),
+            right(0.5, 500.0),
             [1.5, 0, 0, neutral, 0],
-            Left.left(0.5, 500.0),
+            left(0.5, 500.0),
             [1.5, 0, 0, neutral, 0],
-            Back.back(0.5, 500.0),
+            back(0.5, 500.0),
             [1.5, 0, 0, neutral, 0],
-            Hops.hop(0.5, 500.0),
+            hop(0.5, 500.0),
             [1.5, 0, 0, neutral, 0],
-            Hops.hop(0.5, 500.0),
+            hop(0.5, 500.0),
             [1.5, 0, 0, neutral, 0],
-            Left.diagonal_right(1.0, 200.0, 500.0),
+            diagonal_right(1.0, 200.0, 500.0),
             [1.0, 0, 0, neutral, 0],
-            Left.diagonal_left(1.0, 200.0, 500.0),
+            diagonal_left(1.0, 200.0, 500.0),
             [1.0, 0, 0, neutral, 0],
-            Left.left(0.5, 500),
+            left(0.5, 500),
             [1.0, 0, 0, neutral, 0],
-            Right.right(0.5, 500.0),
+            right(0.5, 500.0),
             [1.5, 0, 0, neutral, 0],
-            Right.diagonal_right(3.0, 200.0, 600.0), #change to diagonal_left for other auv
+            diagonal_right(3.0, 200.0, 600.0), #change to diagonal_left for other auv
             # CIRCLE
         ]
+        
         
         self.current_step_index = 0
         self.elapsed_time_in_step = 0.0
@@ -87,6 +88,8 @@ class DanceNode(Node):
                 self.get_logger().info(f"Starting next step: {self.dance_routine[self.current_step_index]}")
             else:
                 self.get_logger().info("Dance finished!")
+                self.send_neutral_command()
+                self.timer.cancel()
 
     def send_neutral_command(self):
         msg = ManualControl()
