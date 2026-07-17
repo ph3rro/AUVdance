@@ -20,36 +20,34 @@ class DanceNode(Node):
         # surge is forward backward, sway is left to right, heave is up and down, yaw is turn
         neutral = 500.0
         self.dance_routine = [
-            (5.0, neutral, neutral - 500.0, neutral, neutral - 300.0), # duration, x, y, z, rotation
-            self.get_logger().info("Starting dance routine..."),
-            time.sleep(1.75)
+            [1.75, neutral, neutral, neutral, neutral],
             Hops.hop(0.5, 500.0), # duration, strength/500
-            time.sleep(1.5)
-            Right.right(0.5, 250.0)
-            time.sleep(1.5)
-            Left.left(0.5, 250.0)
-            Hop.hops(3.5, 0.0, 500.0)
-            time.sleep(2.0)
-            Right.right(0.5, 250.0)
-            time.sleep(1.5)
+            [1.5, neutral, neutral, neutral, neutral],
+            Right.right(0.5, 250.0),
+            [1.5, neutral, neutral, neutral, neutral],
             Left.left(0.5, 250.0),
-            time.sleep(1.5)
-            Back.back(0.5, 250.0)
-            time.sleep(1.5)
-            Hops.hop(0.5, 500.0)
-            time.sleep(1.5)
-            Hops.hop(0.5, 500.0)
-            time.sleep(1.5)
-            Left.diagonal_right(1.0, 100.0, 250.0)
-            time.sleep(1.0)
-            Left.diagonal_left(1.0, 100.0, 250.0)
-            time.sleep(1.0)
-            Left.left(0.5, 250)
-            time.sleep(1.0)
-            Right.right(0.5, 250.0)
-            time.sleep(1.5)
-            Right.diagonal_right(3.0, 100.0, 300.0) #change to diagonal_left for other auv
-            time.sleep(3)
+            Hops.hop(3.5, 0.0, 500.0),
+            [2.0, neutral, neutral, neutral, neutral],
+            Right.right(0.5, 250.0),
+            [1.5, neutral, neutral, neutral, neutral],
+            Left.left(0.5, 250.0),
+            [1.5, neutral, neutral, neutral, neutral],
+            Back.back(0.5, 250.0),
+            [1.5, neutral, neutral, neutral, neutral],
+            Hops.hop(0.5, 500.0),
+            [1.5, neutral, neutral, neutral, neutral],
+            Hops.hop(0.5, 500.0),
+            [1.5, neutral, neutral, neutral, neutral],
+            Left.diagonal_right(1.0, 100.0, 250.0),
+            [1.0, neutral, neutral, neutral, neutral],
+            Left.diagonal_left(1.0, 100.0, 250.0),
+            [1.0, neutral, neutral, neutral, neutral],
+            Left.left(0.5, 250),
+            [1.0, neutral, neutral, neutral, neutral],
+            Right.right(0.5, 250.0),
+            [1.5, neutral, neutral, neutral, neutral],
+            Right.diagonal_right(3.0, 100.0, 300.0), #change to diagonal_left for other auv
+            # CIRCLE
         ]
         
         self.current_step_index = 0
