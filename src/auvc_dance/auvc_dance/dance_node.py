@@ -12,13 +12,15 @@ class DanceNode(Node):
     def __init__(self):
         super().__init__('rov_choreographer')
         
+        '''self.manual_pub publishes the movements so the auv can read them'''
         self.manual_pub = self.create_publisher(ManualControl, '/mavros/manual_control/send', 10)
         
+        '''self.dance_routine is an array of arrays that dictates the dance routine'''
         # heave is from 0 to 1000, where 500 is neutral, 0 is down, and 1000 is up
         # surge is forward backward, sway is left to right, heave is up and down, yaw is turn
-
+        neutral = 500.0
         self.dance_routine = [
-            (5.0,  500.0,   0.0, 500.0, 200.0), # time, surge, sway, heave, yaw
+            (5.0, neutral, neutral-500, neutral, neutral-300), # time, x, y, z, rotation
         ]
         
         self.current_step_index = 0
