@@ -20,11 +20,35 @@ class DanceNode(Node):
         neutral = 500.0
         self.dance_routine = [
             (5.0, neutral, neutral-500, neutral, neutral-300), # duration, x, y, z, rotation
+            self.get_logger().info("Starting dance routine..."),
+            time.sleep(1.75)
             Hops.hop(0.5, 500), # duration, strength/500
-            Left.go_left(0.5, -250)
+            time.sleep(1.5)
             Right.go_right(0.5, 250)
-            Left.go_left(0.5, -250),
-            Back.go_back(0.5, -250)
+            time.sleep(1.5)
+            Left.go_left(0.5, 250)
+            hops(3.5, 0.0, 500)
+            time.sleep(2.0)
+            Right.go_right(0.5, 250)
+            time.sleep(1.5)
+            Left.go_left(0.5, 250),
+            time.sleep(1.5)
+            Back.go_back(0.5, 250)
+            time.sleep(1.5)
+            Hops.hop(0.5, 500)
+            time.sleep(1.5)
+            Hops.hop(0.5, 500)
+            time.sleep(1.5)
+            Left.diagonal_right(1, 100, 250)
+            time.sleep(1.0)
+            Left.diagonal_left(1, 100, 250)
+            time.sleep(1.0)
+            Left.go_left(0.5, 250)
+            time.sleep(1.0)
+            Right.go_right(0.5, 250)
+            time.sleep(1.5)
+            Right.diagonal_right(3, 100, 300) #change to diagonal_left for other auv
+            time.sleep(3)
         ]
         
         self.current_step_index = 0
