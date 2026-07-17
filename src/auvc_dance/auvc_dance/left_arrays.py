@@ -5,7 +5,7 @@ class Left:
        spin: Strength of rotation out of 500'''
     def left(secs, strength, spin = 0):
         neutral = 500.0
-        return [secs, neutral, neutral - strength, neutral, neutral + spin]
+        return [secs, 0, 0 - strength, neutral, 0 + spin]
     
     '''Left.diagonal_left outputs and array of format [duration, x_thrust, y_thrust, z_thrust, angular_thrust]
        secs: Duration of movement in seconds
@@ -14,7 +14,7 @@ class Left:
        spin: Strength of rotation out of 500'''
     def diagonal_left(secs, strength_left, strength_forward, spin = 0):
         neutral = 500.0
-        return [secs, neutral + strength_forward, neutral - strength_left, neutral, neutral + spin]
+        return [secs, 0 + strength_forward, 0 - strength_left, neutral, 0 + spin]
     
     '''Left.diagonal_up_left outputs and array of format [duration, x_thrust, y_thrust, z_thrust, angular_thrust]
        secs: Duration of movement in seconds
@@ -24,4 +24,4 @@ class Left:
        spin: Strength of rotation out of 500'''
     def diagonal_up_left(secs, strength_left, strength_forward, strength_up, spin = 0):
         neutral = 500.0
-        return [secs, neutral + strength_forward, neutral - strength_left, neutral + strength_up, neutral + spin]
+        return [secs, 0 + strength_forward, 0 - strength_left, neutral + strength_up, 0 + spin]

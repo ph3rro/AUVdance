@@ -5,4 +5,4 @@ class Hops:
        spin: Strength of rotation out of 500'''
     def hop(secs, strength, spin = 0):
         neutral = 500.0
-        return [secs, neutral, neutral, neutral + strength, neutral + spin]
+        return [secs, 0, 0, neutral + strength, 0 + spin]

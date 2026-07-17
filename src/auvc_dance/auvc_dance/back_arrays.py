@@ -5,4 +5,4 @@ class Back:
        spin: Strength of rotation out of 500'''
     def back(secs, strength, spin):
         neutral = 500.0
-        return [secs, neutral - strength, neutral, neutral, neutral + spin]
+        return [secs, 0 - strength, 0, neutral, 0 + spin]
