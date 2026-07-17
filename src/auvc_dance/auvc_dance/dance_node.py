@@ -5,6 +5,7 @@ import time
 import numpy as np
 from hops_arrays import Hops
 from left_arrays import Left
+from right_arrays import Right
 from back_arrays import Back
 
 class DanceNode(Node):
@@ -19,35 +20,35 @@ class DanceNode(Node):
         # surge is forward backward, sway is left to right, heave is up and down, yaw is turn
         neutral = 500.0
         self.dance_routine = [
-            (5.0, neutral, neutral-500, neutral, neutral-300), # duration, x, y, z, rotation
+            (5.0, neutral, neutral - 500.0, neutral, neutral - 300.0), # duration, x, y, z, rotation
             self.get_logger().info("Starting dance routine..."),
             time.sleep(1.75)
-            Hops.hop(0.5, 500), # duration, strength/500
+            Hops.hop(0.5, 500.0), # duration, strength/500
             time.sleep(1.5)
-            Right.go_right(0.5, 250)
+            Right.right(0.5, 250.0)
             time.sleep(1.5)
-            Left.go_left(0.5, 250)
-            hops(3.5, 0.0, 500)
+            Left.left(0.5, 250.0)
+            Hop.hops(3.5, 0.0, 500.0)
             time.sleep(2.0)
-            Right.go_right(0.5, 250)
+            Right.right(0.5, 250.0)
             time.sleep(1.5)
-            Left.go_left(0.5, 250),
+            Left.left(0.5, 250.0),
             time.sleep(1.5)
-            Back.go_back(0.5, 250)
+            Back.back(0.5, 250.0)
             time.sleep(1.5)
-            Hops.hop(0.5, 500)
+            Hops.hop(0.5, 500.0)
             time.sleep(1.5)
-            Hops.hop(0.5, 500)
+            Hops.hop(0.5, 500.0)
             time.sleep(1.5)
-            Left.diagonal_right(1, 100, 250)
+            Left.diagonal_right(1.0, 100.0, 250.0)
             time.sleep(1.0)
-            Left.diagonal_left(1, 100, 250)
+            Left.diagonal_left(1.0, 100.0, 250.0)
             time.sleep(1.0)
-            Left.go_left(0.5, 250)
+            Left.left(0.5, 250)
             time.sleep(1.0)
-            Right.go_right(0.5, 250)
+            Right.right(0.5, 250.0)
             time.sleep(1.5)
-            Right.diagonal_right(3, 100, 300) #change to diagonal_left for other auv
+            Right.diagonal_right(3.0, 100.0, 300.0) #change to diagonal_left for other auv
             time.sleep(3)
         ]
         
