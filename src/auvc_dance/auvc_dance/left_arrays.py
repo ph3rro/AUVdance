@@ -1,15 +1,7 @@
 import time
-from geometry_msgs.msg import Twist
-import rclpy    # the ROS 2 client library for Python
-from rclpy.node import Node    # the ROS 2 Node class
-import numpy as np
 
 class Left:
-    def go_left():
-        movement_arr = [-0.5, 0.0, 0.0, 0.0, 0.0, 0.0]
-        return movement_arr
-    
-    def stop():
-        return [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-    
+    def go_left(secs, strength):
+        neutral = 500
+        return [0.5, neutral + strength, neutral, neutral, neutral]
     
