@@ -23,5 +23,5 @@ def diagonal_left(secs, strength_left, strength_forward, spin = 0):
     strength_up: Strength of thrust up out of 1000.0
     spin: Strength of rotation out of 1000'''
 def diagonal_up_left(secs, strength_left, strength_forward, strength_up, spin = 0):
-    neutral = 50.0
+    neutral = 0.0
     return [secs, 0 + strength_forward, 0 - strength_left, neutral + strength_up, 0 + spin]
