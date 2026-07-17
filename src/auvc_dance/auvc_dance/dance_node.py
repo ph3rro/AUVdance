@@ -5,6 +5,7 @@ import time
 import numpy as np
 from hops_arrays import Hops
 from left_arrays import Left
+from right_arrays import Right
 
 class DanceNode(Node):
     def __init__(self):
@@ -21,6 +22,7 @@ class DanceNode(Node):
             (5.0, neutral, neutral-500, neutral, neutral-300), # duration, x, y, z, rotation
             Hops.hop(0.5, 500), # duration, strength/500
             Left.go_left(0.5, -250)
+            Right.go_right(0.5, 250)
         ]
         
         self.current_step_index = 0
