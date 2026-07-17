@@ -25,6 +25,7 @@ setup(
     entry_points={
         'console_scripts': [
             'dance_node = auvc_dance.dance_node:main',
+            'arming_node = auvc_dance.arming_node:main',
         ],
     },
 )
