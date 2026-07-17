@@ -17,7 +17,8 @@ class DanceNode(Node):
         # surge is forward backward, sway is left to right, heave is up and down, yaw is turn
         neutral = 500.0
         self.dance_routine = [
-            (5.0, neutral, neutral-500, neutral, neutral-300), # time, x, y, z, rotation
+            (5.0, neutral, neutral-500, neutral, neutral-300), # duration, x, y, z, rotation
+            Hops.hop(0.5, 500), # duration, strength/500
         ]
         
         self.current_step_index = 0
