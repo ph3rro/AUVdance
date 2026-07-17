@@ -4,5 +4,5 @@
     strength: Strength of thrust out of 1000.0
     spin: Strength of rotation out of 1000'''
 def hop(secs, strength, spin = 0):
-    neutral = 500.0
+    neutral = 50.0
     return [secs, 0, 0, neutral + strength, 0 + spin]
